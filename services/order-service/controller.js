@@ -4,7 +4,8 @@ export const getOrder = (req, res) => {
   try {
     const { id } = req.params;
     const order = getOrderById(id);
-    res.json(order);
+   console.log("Hi");
+  
   } catch (error) {
     res.status(404).json({ error: error.message });
   }
@@ -14,6 +15,7 @@ export const createOrderHandler = (req, res) => {
   try {
     const newOrder = createOrder(req.body);
     res.status(201).json(newOrder);
+    console.log("Hi");
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
