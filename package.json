@@ -1,0 +1,33 @@
+{
+  "name": "nodejs-microservices",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+ "scripts": {
+  "start:users": "node --no-deprecation services/user-service/index.js",
+  "start:orders": "node --no-deprecation services/order-service/index.js",
+  "start:gateway": "node --no-deprecation gateway/index.js",
+  "start": "concurrently \"npm run start:users\" \"npm run start:orders\" \"npm run start:gateway\""
+},
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.3",
+    "joi": "^17.13.3",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "nodemon": "^2.0.22"
+  },
+  "keywords": [
+    "nodejs",
+    "microservices",
+    "gateway",
+    "es-modules"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "A Node.js microservices architecture project using ES modules"
+}
